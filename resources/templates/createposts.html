@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"	layout:decorator="layouts/main">
+<head>
+	<meta charset="utf-8"></meta>
+	<title>AdatVilág</title>
+</head>
+<body>
+
+	<div layout:fragment="loginContent">
+	
+	<!-- section -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- Post content -->
+					<div class="col-md-8">
+		
+			<form name="create_post" th:action="@{/create}" th:object="${story}" method="post" class="form-signin">
+			<h2 class="form-signin-heading">Create content</h2>
+				<input type="text" id="title" name="title" th:field="*{title}" class="form-control" placeholder="Title" /> 
+		 	    <input type="text" id="title_long" name="title_long" th:field="*{title_long}" class="form-control" placeholder="Long Title" /> 
+		 	    <input type="text" id="category" name="category" th:field="*{category}" class="form-control" placeholder="Category"  /> 
+			    <input type="text" id="content" name="content" th:field="*{content}"  class="form-control" placeholder="Content" />
+			    <input type="text" id="logo" name="logo" th:field="*{logo}"  class="form-control" placeholder="Logo" />
+			
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
+			
+		</form>
+
+</div>
+</div>
+</div>
+</div>
+	</div>
+		
+</body>
+</html>

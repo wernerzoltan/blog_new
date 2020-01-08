@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en"	layout:decorator="layouts/main">
+<head>
+	<meta charset="utf-8"></meta>
+	<title>AdatVilág</title>
+</head>
+<body>
+
+<div layout:fragment="loginContent">
+	
+		<div id="post-header" class="page-header">
+				<div class="background-img" style="background-image: url('./img/post-page.jpg');"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10">
+							<h1>Angular</h1>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+		
+			<!-- /Page Header -->
+		
+		<!-- /Header -->
+		
+		<!-- section -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-8">
+						<div class="row">
+							<!-- post -->
+	
+					<!-- post -->
+							<div class="col-md-12">
+							<article th:each="story : ${angularAll}">
+								<div class="post post-row">
+									<a class="post-img" th:href="@{${story.title}}"><img th:src="${story.logo}" alt=""/></a>
+									<div class="post-body">
+										<div class="post-meta">
+											<a class="post-category cat-2" th:text="${story.category}" th:href="${story.category}">Category</a>
+											<span class="post-date" th:text="${#dates.format(story.posted, 'yyyy.MM.dd')}">March 27, 2018</span>
+										</div>
+										<h3 class="post-title">
+									<a th:text="${story.title}" th:href="@{${story.title}}">Ez itt a cím</a></h3>
+										<p th:text="${story.title_long}">Alcim</p>									</div>
+								</div>
+								</article>
+							</div>
+							<!-- /post -->
+						
+					</div>
+				</div>
+				
+				
+				<div class="col-md-4">
+				
+						<!-- post widget -->
+						<div class="aside-widget">
+						
+							
+								</div>
+						<!-- /post widget -->
+						
+						<!-- catagories -->
+						<div class="aside-widget">
+							<div class="section-title">
+								<h2>Kategóriák</h2>
+							</div>
+							<div class="category-widget">
+								<ul>
+									<li><a href="/java" class="cat-1">JAVA<span th:text="${countJava}">0</span></a></li>
+									<li><a href="/angular" class="cat-2">Angular<span th:text="${countAngular}">0</span></a></li>
+									<li><a href="/sql" class="cat-4">SQL<span th:text="${countSql}">0</span></a></li>
+									<li><a href="/gis" class="cat-3">GIS<span th:text="${countGis}">0</span></a></li>
+									<!-- <li><a href="/tech" class="cat-5">Tech<span th:text="${countTech}">0</span></a></li> -->
+									<!-- <li><a href="/data" class="cat-5">Data<span th:text="${countData}">0</span></a></li> -->
+								</ul>
+							</div>
+						</div>
+						<!-- /catagories -->
+						
+						<!-- tags -->
+						<div class="aside-widget">
+							<div class="tags-widget">
+								<ul>
+									<li><a href="#">JAVA</a></li>
+									<li><a href="#">Angular</a></li>
+									<li><a href="#">Tutorial</a></li>
+									<li><a href="#">Backend</a></li>
+									<li><a href="#">SQL</a></li>
+									<li><a href="#">GIS</a></li>
+									<li><a href="#">Development</a></li>
+									<li><a href="#">Blog</a></li>
+									<li><a href="#">Data</a></li>
+									<li><a href="#">Spring Boot</a></li>
+									<li><a href="#">Tech</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /tags -->
+						
+						<!-- archive -->
+						<!-- <div class="aside-widget">
+							<div class="section-title">
+								<h2>Korábbiak</h2>
+							</div>
+							<div class="archive-widget">
+								<ul>
+									<li><a href="#">2019. május</a></li>
+
+								</ul>
+							</div>
+						</div> -->
+						<!-- /archive -->
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /section -->
+				
+</div>		
+		
+
+</body>
+</html>

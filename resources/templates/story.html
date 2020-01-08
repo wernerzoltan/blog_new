@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en"	layout:decorator="layouts/main">
+<head>
+	<meta charset="utf-8"></meta>
+	<title>AdatVilág</title>
+</head>
+<body>
+
+<!-- <h3>CIM</h3> -->
+<!-- <p>BEKEZDÉS</p> -->
+<!-- KÉP: -->
+<!-- <figure class="figure-img"> -->
+<!-- <img class="img-responsive" src="./img/post-4.jpg" alt=""> -->
+<!-- <figcaption>KÉPALÁIRÁS</figcaption> -->
+<!-- </figure>  -->
+<!-- <blockquote class="blockquote">IDÉZET</blockquote> -->
+ 
+
+<div layout:fragment="loginContent">
+
+
+				<!-- Page Header -->
+			<div class="page-header">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10">
+						<article th:each="story : ${story}">
+							<ul class="page-header-breadcrumb">
+								<li><a href="/">Home</a></li>
+								<li><a th:text="${story.category}" th:href="@{${story.category}}">Kategória</a></li>
+							</ul>
+							<h1><p th:text="${story.title}">Cim</p></h1>
+							</article>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Page Header -->
+		
+		<!-- /Header -->
+		
+				
+		<!-- section -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- Post content -->
+					<div class="col-md-8">
+					<article th:each="story : ${story}">
+						<div class="section-row sticky-container">
+							<div class="main-post">
+					
+							
+								<h3><p th:text="${story.title}">Cim</p></h3>
+								<p th:utext="${story.content}">Szöveg</p>
+								
+							</div>
+							<div class="post-shares sticky-shares">
+								<a th:href="@{'https://www.facebook.com/sharer.php?u=http://www.adatvilag.hu/' + ${story.title}}" class="share-facebook"><i class="fa fa-facebook"></i></a>
+								<a th:href="@{'https://www.linkedin.com/shareArticle?url=http://www.adatvilag.hu/' + ${story.title}}" class="share-linkedin"><i class="fa fa-linkedin"></i></a>
+							</div>
+						</div>
+
+						
+						<!-- author -->
+						<div class="section-row">
+							<div class="post-author">
+								<div class="media">
+									<div class="media-left">
+										<img class="media-object" src="./img/wz.jpg" alt=""/>
+									</div>
+									<div class="media-body">
+										<div class="media-heading">
+											<h3>Werner Zoltán</h3>
+										</div>
+										<p>Bármilyen észrevételed van a bejegyzéssel kapcsolatosan, LinkedIn-en keresztül küldhetsz nekem üzenetet.</p>
+										<ul class="author-social">
+							<li><a href="https://www.linkedin.com/in/zoltan-werner-1b965987/"><i class="fa fa-linkedin"></i></a></li>
+
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						</article>
+						</div>
+						
+						<!-- /author -->
+				
+				
+				<div class="col-md-4">
+				
+						<!-- post widget -->
+						<div class="aside-widget">
+						
+							
+								</div>
+						<!-- /post widget -->
+						
+						<!-- catagories -->
+						<div class="aside-widget">
+							<div class="section-title">
+								<h2>Kategóriák</h2>
+							</div>
+							<div class="category-widget">
+								<ul>
+									<li><a href="/java" class="cat-1">JAVA<span th:text="${countJava}">0</span></a></li>
+									<li><a href="/angular" class="cat-2">Angular<span th:text="${countAngular}">0</span></a></li>
+									<li><a href="/sql" class="cat-4">SQL<span th:text="${countSql}">0</span></a></li>
+									<li><a href="/gis" class="cat-3">GIS<span th:text="${countGis}">0</span></a></li>
+									<li><a href="/tech" class="cat-5">Tech<span th:text="${countTech}">0</span></a></li>
+									<li><a href="/data" class="cat-5">Data<span th:text="${countData}">0</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /catagories -->
+						
+						<!-- tags -->
+						<div class="aside-widget">
+							<div class="tags-widget">
+								<ul>
+									<li><a href="#">JAVA</a></li>
+									<li><a href="#">Angular</a></li>
+									<li><a href="#">Tutorial</a></li>
+									<li><a href="#">Backend</a></li>
+									<li><a href="#">SQL</a></li>
+									<li><a href="#">GIS</a></li>
+									<li><a href="#">Development</a></li>
+									<li><a href="#">Blog</a></li>
+									<li><a href="#">Data</a></li>
+									<li><a href="#">Spring Boot</a></li>
+									<li><a href="#">Tech</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /tags -->
+						
+						<!-- archive -->
+						<!-- <div class="aside-widget">
+							<div class="section-title">
+								<h2>Korábbiak</h2>
+							</div>
+							<div class="archive-widget">
+								<ul>
+									<li><a href="#">2019. május</a></li>
+
+								</ul>
+							</div>
+						</div> -->
+						<!-- /archive -->
+					
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /section -->
+		</div>		
+</div>		
+		
+
+</body>
+</html>

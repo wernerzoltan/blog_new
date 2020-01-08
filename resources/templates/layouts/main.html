@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<head>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-140317259-1"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-140317259-1');
+</script>
+		
+		<meta charset="utf-8"></meta>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>AdatVilág</title>
+		
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet"/> 
+
+<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"/>
+
+	<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="./css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}"/>
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="./static/css/style.css" th:href="@{/css/style.css}"/>
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    </head>
+	<body>
+
+<!-- Header -->
+		<header id="header">
+			<!-- Nav -->
+			<div id="nav">
+				<!-- Main Nav -->
+				<div id="nav-fixed">
+					<div class="container">
+						<!-- logo -->
+						<div class="nav-logo">
+							<a href="/" class="logo"><img src="./img/logo.png" alt=""/></a>
+						</div>
+						<!-- /logo -->
+						
+							<!-- nav -->
+						<ul class="nav-menu nav navbar-nav">
+					<!-- 		<li><a href="/tech">Tech</a></li>
+							<li><a href="/data">Data</a></li> -->
+							<li class="cat-1"><a href="/java">JAVA</a></li>
+							<li class="cat-2"><a href="/angular">Angular</a></li>
+							<li class="cat-3"><a href="/sql">SQL</a></li>
+							<li class="cat-4"><a href="/gis">GIS</a></li>
+						</ul>
+						<!-- /nav -->
+						
+						<!-- search & aside toggle -->
+						<div class="nav-btns">
+							<button class="aside-btn"><i class="fa fa-bars"></i></button>
+						</div>
+						<!-- /search & aside toggle -->
+				
+				</div>
+				</div>
+				
+					<!-- Aside Nav -->
+					<div id="nav-aside">
+					<!-- nav -->
+					<div class="section-row">
+						<ul class="nav-aside-menu">
+							<li><a href="/">Főoldal</a></li>
+							
+						</ul>
+					</div>
+					
+					<!-- widget posts -->
+					
+					<div class="section-row">
+						<h3>Legfrissebb</h3>
+						<article th:each="story : ${limit4}">
+						<div class="post post-widget">
+							<a class="post-img" th:href="@{${story.title}}"><img th:src="${story.logo}" alt=""/></a>
+							<div class="post-body">
+								<h3 class="post-title">
+								<a th:text="${story.title}" th:href="@{${story.title}}">Ez itt a cím</a></h3>
+							</div>
+						</div>
+						</article>
+						
+						<!-- social links -->
+					<div class="section-row">
+						<h3>LinkedIn</h3>
+						<ul class="nav-aside-social">
+							<li><a href="https://www.linkedin.com/in/zoltan-werner-1b965987/"><i class="fa fa-linkedin"></i></a></li>
+							
+						</ul>
+					</div>
+					<!-- /social links -->
+
+						
+					</div>
+					
+					<!-- /widget posts -->
+						
+					<!-- aside nav close -->
+					<button class="nav-aside-close"><i class="fa fa-times"></i></button>
+					<!-- /aside nav close -->
+					</div>
+				</div>
+				<!-- Aside Nav -->
+			
+		
+		</header>
+		<!-- /Header -->
+		
+		<div layout:fragment="loginContent">
+		</div>
+		
+		<!-- Footer -->
+		<footer id="footer">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-5">
+						<div class="footer-widget">
+							<div class="footer-logo">
+								<a href="/" class="logo"><img src="./img/logo.png" alt=""/></a>
+							</div>
+							<ul class="footer-nav">
+							<!-- 	<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Advertisement</a></li> -->
+							</ul>
+							<div class="footer-copyright">
+								<span>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="footer-widget">
+									<h3 class="footer-title">LinkedIn</h3>
+									<ul class="footer-links">
+<!-- 										<li><a href="about.html">Rólunk</a></li> -->
+										<!-- <li><a href="#">Join Us</a></li> -->
+										<li><a href="https://www.linkedin.com/in/zoltan-werner-1b965987/">Elérhetőség</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="footer-widget">
+									<h3 class="footer-title">Ketegóriák</h3>
+									<ul class="footer-links">
+										<li><a href="/java">JAVA</a></li>
+										<li><a href="/angular">Angular</a></li>
+										<li><a href="/sql">SQL</a></li>
+										<li><a href="/gis">GIS</a></li>
+							<!-- 			<li><a href="/tech">Tech</a></li>
+										<li><a href="/data">Data</a></li> -->
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+						</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</footer>
+		
+		
+			<!-- jQuery Plugins -->
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./js/main.js"></script>
+		
+	
+	</body>
+	
+	</html>
